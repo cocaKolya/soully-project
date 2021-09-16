@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 const { questions, answers } = require('../db/models');
 router.get('/', function (req, res) {
