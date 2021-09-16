@@ -2,7 +2,7 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* background-image: url(/image/main.png); */
-  color: white;
+  color: black;
 }
 
 a {
@@ -30,4 +30,6 @@ a {
   position: relative;
 }
 
-
+#select {
+  display: inherit;
+}
