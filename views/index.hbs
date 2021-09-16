@@ -1,2 +1,16 @@
+<script defer src='javascripts/entryQuiz.js'></script>
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class='quiz-wrapper'>
+  <p>answeer the questions</p>
+  <form name='birthData'>
+    <label>Имя:</label>
+    <input required name='name' />
+    <label>Дата рождения:</label>
+    <input type='date' name='date' />
+    <label>Время рождения:</label>
+    <input type='time' name='time' />
+    <label>Место рождения:</label>
+    <input required name='place' />
+    <button class='birthdata-btn'>START</button>
+  </form>
+</div>
