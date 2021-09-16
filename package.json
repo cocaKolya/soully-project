@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cocaKolya/souly-project#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "hbs": "^4.1.2",
     "morgan": "^1.10.0",
