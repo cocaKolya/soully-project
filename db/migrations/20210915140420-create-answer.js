@@ -12,7 +12,11 @@ module.exports = {
         type: Sequelize.STRING
       },
       questionId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "questions",
+          key: "id"
+        }
       },
       personalityId: {
         type: Sequelize.INTEGER,

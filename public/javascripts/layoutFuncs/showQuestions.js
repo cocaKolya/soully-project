@@ -1,4 +1,4 @@
-function showQuestions(data){
+function showQuestions(data) {
   return `<div class="row-question">
    <form action="/questions" method="POST">
    <h2>${data.title}</h2>
@@ -13,3 +13,5 @@ function showQuestions(data){
   </form> 
 </div>`;
 }
+
+module.exports = showQuestions;
