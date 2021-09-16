@@ -1,30 +1,13 @@
 <div class="row-question">
    <form action="/questions" method="POST">
-   <h2>Mind Status</h2>
+   <h2>{{question.title}}</h2>
+   {{#each answers}}
    <p>
       <label>
         <input name="group1" type="radio" class="inputAnswer"/>
-        <span>Red</span>
+        <span>{{this.title}}</span>
       </label>
     </p>
-   <p>
-      <label>
-        <input name="group1" type="radio" class="inputAnswer"/>
-        <span>Red</span>
-      </label>
-    </p>
-   <p>
-      <label>
-        <input name="group1" type="radio" class="inputAnswer"/>
-        <span>Red</span>
-      </label>
-    </p>
-   <p>
-      <label>
-        <input name="group1" type="radio" class="inputAnswer"/>
-        <span>Red</span>
-      </label>
-    </p>    
-    <p><input type="submit" value="Выбрать"></p>
+  <p><input type="submit" value="Выбрать"></p>
   </form> 
 </div>

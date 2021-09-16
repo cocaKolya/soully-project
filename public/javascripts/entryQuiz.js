@@ -15,7 +15,7 @@ if (!localStorage.getItem('birthData')) {
       // console.log(localStorage);
       // const a = localStorage.getItem('birthData');
       // console.log(a);
-      $quizWrapper.innerHTML = 
+      $quizWrapper.innerHTML = showQuestions(dataFromBack)
     }
   });
 } else if (!localStorage.getItem('questionsData')){
