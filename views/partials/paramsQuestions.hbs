@@ -1,16 +1,17 @@
-<div class="row">
-    <form class="col s12" action="/params-question" name="params" method="POST">
-      <div class="row">
+<div class='row'>
+  <form class='col s12' action='/params-question' name='params' method='POST'>
+    {{#each}}
+      <div class='row'>
         <h2>{{this.question}}</h2>
-        <select name="select" id="select">
-          <option value="1">{{this.answer}}</option>
-          <option value="2">{{this.answer}}</option>
-          <option value="3">{{this.answer}}</option>
-        </select>        
+        <p class='range-field'>
+          <input type='range' id='test5' min='0' max='100' />
+        </p>
       </div>
- <button id="button-question" class="waves-effect waves-light btn-large">NEXT</button>
+    {{/each}}
+    <button
+      id='button-question'
+      class='waves-effect waves-light btn-large'
+    >NEXT</button>
 
- </form>
+  </form>
 </div>
-        
-  
