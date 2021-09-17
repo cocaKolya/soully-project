@@ -12,13 +12,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       date: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       place: {
         type: Sequelize.STRING
       },
       time: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       userId: {
         type: Sequelize.INTEGER,

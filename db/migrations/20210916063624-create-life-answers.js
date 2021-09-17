@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING
-      },
       userId: {
         type: Sequelize.INTEGER,
         references: {
@@ -24,6 +21,9 @@ module.exports = {
           model: "lifeQuestions",
           key: "id"
         }
+      },
+      answer: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

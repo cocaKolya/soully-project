@@ -16,9 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   BirthData.init({
     name: DataTypes.STRING,
-    date: DataTypes.DATE,
+    date: DataTypes.STRING,
     place: DataTypes.STRING,
-    time: DataTypes.DATE,
+    time: DataTypes.STRING,
     userId: DataTypes.INTEGER
   }, {
     sequelize,

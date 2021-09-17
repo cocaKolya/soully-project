@@ -1,23 +1,25 @@
+<script defer src='/javascripts/registration.js'></script>
+
 <div class="row">
-    <form class="col s12" action="/user/registration" name="registrationForm" method="POST">
+    <form class="col s12" action="/user/registration" name="regForm" method="POST">
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="Placeholder" id="user_name" type="text" class="validate" required>
+          <input placeholder="Placeholder" name="name" type="text" class="validate" required>
           <label for="user_name">User Name</label>
         </div>
       
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate" required>
+          <input name="password" type="password" class="validate" required>
           <label for="password">Password</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate" required>
+          <input name="email" type="email" class="validate" required>
           <label for="email">Email</label>
         </div>
       </div>
-    <button>Register</button>
+    <button id='registration-btn'>Register</button>
     </form>
   </div>

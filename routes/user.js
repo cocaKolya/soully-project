@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const authUser = require('../middlewares/authUser');
-const {user} = require("../db/models")
+const { User } = require('../db/models');
 
 router.get('/login', authUser, async (req, res) => {
-  res.render('./login');
+  res.render('login');
 });
 
 router.get('/registration', authUser, async (req, res) => {
-  res.render('./registration');
+  res.render('registration');
 });
 
 router.post('/registration', async (req, res) => {
@@ -17,12 +17,17 @@ router.post('/registration', async (req, res) => {
   if (name && email && password) {
     const hashPass = await bcrypt.hash(password, 10);
     try {
-      const newUser = await User.create({ name, email, password: hashPass });
+      const newUser = await User.create({
+        username: name,
+        email,
+        password: hashPass,
+      });
       req.session.user = {
         id: newUser.id,
-        name: newUser.name,
+        name: newUser.username,
       };
       console.log(req.session.user);
+      console.log(newUser);
       return res.redirect('/home');
     } catch (err) {
       console.log('333333333');

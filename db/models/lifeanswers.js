@@ -19,9 +19,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   lifeAnswers.init({
-    title: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    questionId: DataTypes.INTEGER
+    questionId: DataTypes.INTEGER,
+    answer: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'lifeAnswers',

@@ -1,13 +1,13 @@
 <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Souly</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-        <li><a href="/user/login">Sign in</a></li>
-        <li><a href ="/user/signup">SignUp</a></li>
-        <li><a href="#">{{this.userName}}</a></li>
-
-
-      </ul>
-    </div>
-  </nav>
+  <div class='nav-wrapper'>
+    <a href='#' class='brand-logo'>Souly</a>
+    <ul id='nav-mobile' class='right hide-on-med-and-down'>
+    {{#if user}}
+    <li>{{user.name}}</li>
+    <li class="pipe-separate t-light-green left"><a href="/user/logout">logout</a></li>
+    {{else}}
+    <li><a href='#'>login</a></li>
+    {{/if}}
+    </ul>
+  </div>
+</nav>
