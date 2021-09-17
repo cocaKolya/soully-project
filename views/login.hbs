@@ -1,4 +1,4 @@
-<div class='row'>
+{{!-- <div class='row'>
   <div class='s4 offset-s4'>
     <form action='/user/login' method='POST'>
       <div class='row'>
@@ -26,4 +26,28 @@
       </div>
     </form>
   </div>
-</div>
+</div> --}}
+
+<form action='/user/login' method="POST">
+        <h1>Login</h1>
+
+        <div class="txtb">
+          <input id='email'
+            type='email'
+            class='validate c-dk-green'
+            name='email'>
+          <span data-placeholder="Email"></span>
+        </div>
+
+        <div class="txtb">
+          <input id='password'
+            type='password'
+            class='validate'
+            name='password'>
+          <span data-placeholder="Password"></span>
+        </div>
+
+        <input type="submit" class="logbtn btn button" value="Login">
+
+
+      </form>
