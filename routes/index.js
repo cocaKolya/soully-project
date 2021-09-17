@@ -2,13 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { questions, answers, lifeQuestions } = require('../db/models');
 
-<<<<<<< HEAD
-router.get("/", function (req, res) {
-  res.render("index");
-=======
 router.get('/', function (req, res) {
   res.render('index');
->>>>>>> 2c37e3363014753f92fe452d6377c2b395fa0a30
 });
 
 module.exports = router;
