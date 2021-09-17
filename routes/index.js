@@ -1,13 +1,14 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { questions, answers } = require('../db/models');
+const { questions, answers, lifeQuestions } = require('../db/models');
+
 router.get('/', function (req, res) {
   res.render('index');
 });
 
 module.exports = router;
 
-router.get('/question/:id', async function (req, res) {
+router.get('/question/:count', async function (req, res) {
   let nextQuestion = await questions.findOne({
     order: [['id']],
     include: [
@@ -15,20 +16,22 @@ router.get('/question/:id', async function (req, res) {
         model: answers,
       },
     ],
-    offset: req.params.id
+    offset: req.params.count,
   });
   res.json(nextQuestion);
 });
 
-router.post('/question/next', async function (req, res) {
-  let nextCar = await questions.findAll({
+router.get('/max', async function (req, res) {
+  let quizCount = await lifeQuestions.count();
+  console.log(quizCount);
+  let questionCount = await questions.count();
+  res.json({ quizCount, questionCount });
+});
+
+router.get('/quiz/:count', async function (req, res) {
+  let nextQuiz = await lifeQuestions.findOne({
     order: [['id']],
-    offset: req.body.count,
-    limit: 1,
+    offset: req.params.count,
   });
-  if (!nextCar.length) {
-    return res.sendStatus(404);
-  } else {
-    res.json(nextCar);
-  }
+  res.json(nextQuiz);
 });
