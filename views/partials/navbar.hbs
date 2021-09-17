@@ -2,12 +2,15 @@
   <div class='nav-wrapper'>
     <a href='#' class='brand-logo'>Souly</a>
     <ul id='nav-mobile' class='right hide-on-med-and-down'>
-    {{#if user}}
-    <li>{{user.name}}</li>
-    <li class="pipe-separate t-light-green left"><a href="/user/logout">logout</a></li>
-    {{else}}
-    <li><a href='#'>login</a></li>
-    {{/if}}
+      {{#if user}}
+        <li>{{user.name}}</li>
+        <li class='pipe-separate t-light-green left'><a
+            href='/user/logout'
+          >logout</a></li>
+      {{else}}
+        <li><a href='/user/login'>login</a></li>
+        <li><a href='/home'>home</a></li>
+      {{/if}}
     </ul>
   </div>
 </nav>

@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { userAnswers, lifeAnswers, BirthData } = require('../db/models');
 
 router.get('/', (req, res) => {
-  console.log('111111111');
   if (!req.session.user) res.redirect('/');
   res.render('home');
 });

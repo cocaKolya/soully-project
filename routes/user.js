@@ -26,8 +26,7 @@ router.post('/registration', async (req, res) => {
         id: newUser.id,
         name: newUser.username,
       };
-      // console.log(req.session.user);
-      // console.log(newUser);
+
       return res.redirect('/home');
     } catch (err) {
       console.log('333333333');
@@ -50,9 +49,9 @@ router.post('/login', async (req, res) => {
       ) {
         req.session.user = {
           id: currentUser.id,
-          name: currentUser.name,
+          name: currentUser.username,
         };
-        // return res.redirect('/home');
+        return res.redirect('/home');
       } else {
         return res.redirect('/user/login');
       }
