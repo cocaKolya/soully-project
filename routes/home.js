@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const { userAnswers, lifeAnswers, BirthData } = require('../db/models');
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
+  console.log('111111111');
+  if (!req.session.user) res.redirect('/');
   res.render('home');
 });
-
-module.exports = router;
 
 router.post('/', async (req, res) => {
   try {
@@ -20,9 +20,9 @@ router.post('/', async (req, res) => {
     }
     for (const key in quizAnswers) {
       await lifeAnswers.create({
-        title: quizAnswers[key],
         userId: req.session.user.id,
         questionId: key,
+        answer: quizAnswers[key],
       });
     }
     await BirthData.create({
@@ -35,3 +35,5 @@ router.post('/', async (req, res) => {
     console.log(error);
   }
 });
+
+module.exports = router;

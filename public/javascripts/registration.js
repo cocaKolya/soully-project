@@ -1,5 +1,11 @@
 const $regBtn = document.querySelector('#registration-btn');
 const $regForm = document.forms.regForm;
+
+const questionsAnswers = JSON.parse(localStorage.getItem('questionsAnswers'));
+const quizAnswers = JSON.parse(localStorage.getItem('quizAnswers'));
+const birthData = JSON.parse(localStorage.getItem('birthData'));
+
+if (!(questionsAnswers, quizAnswers, birthData)) window.location = '/';
 $regBtn.addEventListener('click', async (event) => {
   event.preventDefault();
   const myData = Object.fromEntries(new FormData($regForm));
@@ -13,5 +19,6 @@ $regBtn.addEventListener('click', async (event) => {
   });
   if (response.ok) {
     console.log('vse kaef');
+    window.location = '/home';
   }
 });
