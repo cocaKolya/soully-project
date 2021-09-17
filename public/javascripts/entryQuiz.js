@@ -1,6 +1,10 @@
 const $birthData = document.forms.birthData;
 const $birthButton = document.querySelector('.birthdata-btn');
 const $quizWrapper = document.querySelector('.quiz-wrapper');
+const $birthWrapper = document.querySelector('#birth-wrapper');
+
+// console.log(req.session.user);
+// if (res.locals.user) window.location = '/home';
 
 async function getAmoutOf() {
   const responseCount = await fetch(`/max`, {
@@ -160,6 +164,7 @@ console.log('local storage---->', localStorage.getItem('questionsAnswers'));
 console.log('local storage---->', localStorage.getItem('quizAnswers'));
 //проверка наличия в сторадже данных из первого опросника про рождение
 if (!localStorage.getItem('birthData')) {
+  $birthWrapper.classList.remove('hidden');
   // $quizWrapper.innerHTML = showBirthData();
   $birthButton.addEventListener('click', async (event) => {
     console.log('knopka');

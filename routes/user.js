@@ -26,8 +26,8 @@ router.post('/registration', async (req, res) => {
         id: newUser.id,
         name: newUser.username,
       };
-      console.log(req.session.user);
-      console.log(newUser);
+      // console.log(req.session.user);
+      // console.log(newUser);
       return res.redirect('/home');
     } catch (err) {
       console.log('333333333');
