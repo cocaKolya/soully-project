@@ -13,27 +13,27 @@ module.exports = {
     */
 
     await queryInterface.bulkInsert('questions', [{
-      title: 'Вопрос 1',
+      title: 'I would enjoy attending a large party in my honor',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: 'Вопрос 2',
+      title: 'I dislike being in competition with others',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: 'Вопрос 3',
+      title: 'I prefer to follow a schedule',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: 'Вопрос 4',
+      title: 'I question the wisdom of my elders',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      title: 'Вопрос 5',
+      title: 'I enjoy being the center of attention',
       createdAt: new Date(),
       updatedAt: new Date(),
     },

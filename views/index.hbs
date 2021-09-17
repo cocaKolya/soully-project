@@ -1,42 +1,70 @@
 <script defer src='/javascripts/entryQuiz.js'></script>
+<link rel='stylesheet' href='/stylesheets/index.css' />
 <div class='quiz-wrapper'>
+  <h1 class='head-h'>enter your birth info</h1>
   <div id='birth-wrapper' class='hidden row'>
-    <form class='col s12 offset-s4' name='birthData'>
-      <div class='row'>
-        <div class='input-field col s4'>
-          <input
-            placeholder='Placeholder'
-            name='name'
-            id='first_name'
-            type='text'
-            class='validate'
-          />
-          <label for='first_name'>Name</label>
-        </div>
+    <form class='col container' name='birthData'>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='input-data form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          placeholder='name'
+          name='name'
+          id='floatingName'
+          type='text'
+          class='form-control'
+        />
+        <label for='floatingInput'>name</label>
       </div>
-      <div class='row'>
-        <div class='input-field col s4'>
-          <input id='birth-date' type='date' name='date' class='validate' />
-          <label for='birth-date'>Birth Date</label>
-        </div>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='date'
+          name='date'
+          class='form-control'
+          id='floatingInput'
+          placeholder='Password'
+        />
+        <label for='floatingInput'>birth date</label>
       </div>
-      <div class='row'>
-        <div class='input-field col s4'>
-          <input id='time' type='time' name='time' class='validate' />
-          <label for='time'>Time of Birth</label>
-        </div>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='time'
+          name='time'
+          class='form-control'
+          id='floatingInput'
+          placeholder='Password'
+        />
+        <label for='floatingInput'>time of birth</label>
       </div>
-      <div class='row'>
-        <div class='input-field col s4'>
-          <input id='place' type='text' name='place' class='validate' />
-          <label for='place'>Place Of Birth</label>
-        </div>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='text'
+          name='place'
+          class='form-control'
+          id='floatingInput'
+          placeholder='Password'
+        />
+        <label for='floatingInput'>place of birth</label>
       </div>
       <button
-        id='main-button'
-        class='waves-effect waves-light btn-large birthdata-btn'
-        name='btn'
-      >Send</button>
+        style='width:40%'
+        type='button'
+        class='birthdata-btn btn btn-outline-light'
+      >Start</button>
     </form>
   </div>
 </div>

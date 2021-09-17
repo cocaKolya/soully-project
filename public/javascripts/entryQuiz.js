@@ -2,7 +2,6 @@ const $birthData = document.forms.birthData;
 const $birthButton = document.querySelector('.birthdata-btn');
 const $quizWrapper = document.querySelector('.quiz-wrapper');
 const $birthWrapper = document.querySelector('#birth-wrapper');
-
 // console.log(req.session.user);
 // if (res.locals.user) window.location = '/home';
 
@@ -23,39 +22,74 @@ function showQuestions(data) {
   result = '';
   for (let i = 0; i < arrOfAnswers.length; i++) {
     result += `<p>
-      <label>
-      <input name="group1" type="radio" class="inputAnswer" value='${arrOfAnswers[i].id}'/>
-      <span>${arrOfAnswers[i].title}</span>
-      </label>
+        <input
+          name='flexRadioDefault'
+          id='flexRadioDefault1'
+          type='radio'
+          class='form-check-input'
+          value='${arrOfAnswers[i].id}'
+        />
+        <label class='form-check-label' for='flexRadioDefault1'>
+          ${arrOfAnswers[i].title}
+        </label>
       </p>`;
   }
-  return `<div class="row-question color-black">
-    <form name="questionForm" >
-    <h2>${data.title}</h2>${result}
-    <button
-    id='question-button'
-    class='question-btn waves-effect waves-light btn-large'
-    name='btn'
-    >Send</button>
-    </form>
-    </div>`;
+  return `<div class='container flex-row'>
+  <form style="padding-left: 0px;" name='questionForm' class='form-check'>
+    <h1>${data.title}</h1>
+    <div class='radio-pad'>
+      <div class='inside-div'>${result}
+    </div>
+      <button
+      id="question-button"
+        type='button'
+        class='next-button btn btn-outline-light'
+      >Next</button>
+      </div>
+  </form>
+</div>`;
 }
 
 function showQuiz(data) {
-  return `<div class='row'>
-  <form class='col s12' name="quizForm">
-      <div class='row'>
-        <h2>${data.title}</h2>
-        <p id='test-slider'class='range-field'>
-          <input type='range' id='test5' min='0' max='10' />
-        </p>
+  return `<div style='width: 700px;' class='container flex-row'>
+  <form
+    style='padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%'
+    name='quizForm'
+    class='form-check'
+  >
+    <h1>${data.title}</h1>
+    <div class='radio-pad' style=' width: 100%;'>
+      <div class='inside-div' style='width: 100%;'>
+        <div
+          style=' display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 10%;'
+        >
+          <span>1</span>
+          <span style='padding-left: 12px;'>5</span>
+          <span>10</span>
+        </div>
+        <input
+          type='range'
+          class='form-range'
+          min='0'
+          max='10'
+          step='1'
+          id='range-input'
+        />
       </div>
-
-    <button
-      id='quiz-button'
-      class='waves-effect waves-light btn-large'
-    >NEXT</button>
-
+      <button
+        id='quiz-button'
+        style='margin-top: 10%;'
+        type='button'
+        class='next-button btn btn-outline-light'
+      >Next</button>
+    </div>
   </form>
 </div>`;
 }
@@ -107,7 +141,7 @@ async function quizStep(count) {
     const $quizButton = document.querySelector('#quiz-button');
     $quizButton.addEventListener('click', (event) => {
       event.preventDefault();
-      const range = document.querySelector('#test5');
+      const range = document.querySelector('#range-input');
       console.log('--->>>', range.value);
       quizAnswers[id] = range.value;
       quizStep(count + 1);
@@ -137,16 +171,19 @@ async function questionsStep(count) {
     const $questionButton = document.querySelector('#question-button');
     $questionButton.addEventListener('click', (event) => {
       event.preventDefault();
-      const answerId = Object.fromEntries(new FormData($questionForm));
-      questionsAnswers[questionId] = answerId.group1;
-      if (answerId.group1) {
+      const answerId = Object.fromEntries(
+        new FormData($questionForm)
+      ).flexRadioDefault;
+      console.log(answerId);
+      questionsAnswers[questionId] = answerId;
+      if (answerId) {
         questionsStep(count + 1);
       } else {
         const $errMessage = document.querySelector('#err-message');
         if (!$errMessage) {
           $questionForm.insertAdjacentHTML(
-            'afterend',
-            '<p id="err-message"> выбери ответ!</p>'
+            'beforeend',
+            '<p slyle="padding-top:10px" id="err-message"> choose answer</p>'
           );
         }
       }

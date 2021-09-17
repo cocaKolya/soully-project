@@ -12,52 +12,52 @@ module.exports = {
      * }], {});
     */
       await queryInterface.bulkInsert('lifeQuestions', [{
-        title:"Вопрос 1",
+        title:"I tend to live in the moment and appreciate the “now.”",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 2",
+        title:"I often dwell on past experiences and daydream about different outcomes.",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 3",
+        title:"When life gets tough, I retreat from friends and family.",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 4",
+        title:"When I’m under serious stress, I can’t lead a normal life.",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 5",
+        title:"There aren’t enough hours in the day to accomplish everything I want to do.",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 6",
+        title:"I always make time for my hobbies.",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 7",
+        title:"Compliments make me uncomfortable.",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 8",
+        title:"I have good self-esteem.",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 9",
+        title:"I don’t always know what to expect from people",
         createdAt:new Date(),
         updatedAt:new Date()
       },
       {
-        title:"Вопрос 10",
+        title:"My problems are usually caused by other people.",
         createdAt:new Date(),
         updatedAt:new Date()
       },], {});

@@ -10,148 +10,54 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
-    await queryInterface.bulkInsert('answers', [{
-      questionId: 1,
-      title: 'ответ 1',
-      personalityId:1,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      },
-      {
-        questionId: 1,
-        title: 'ответ 2',
-        personalityId:2,
+     */
+    let arr1 = [];
+    for (let i = 1; i < 6; i++) {
+      arr1.push({
+        questionId: i,
+        title: 'YES',
+        personalityId: i,
         createdAt: new Date(),
         updatedAt: new Date(),
-      },
-      {
-        questionId: 1,
-        title: 'ответ 3',
-        personalityId:3,
+      });
+    }
+    for (let i = 1; i < 6; i++) {
+      arr1.push({
+        questionId: i,
+        title: 'yes',
+        personalityId: i,
         createdAt: new Date(),
         updatedAt: new Date(),
-        },
-        {
-          questionId: 1,
-          title: 'ответ 4',
-          personalityId:4,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-        },
-        {
-          questionId: 2,
-          title: 'ответ 1',
-          personalityId:1,
-          createdAt: new Date(),
-          updatedAt: new Date(),
-          },
-          {
-            questionId: 2,
-            title: 'ответ 2',
-            personalityId:2,
-            createdAt: new Date(),
-            updatedAt: new Date(),
-          },
-          {
-            questionId: 2,
-            title: 'ответ 3',
-            personalityId:3,
-            createdAt: new Date(),
-            updatedAt: new Date(),
-            },
-            {
-              questionId: 2,
-              title: 'ответ 4',
-              personalityId:4,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-            },
-            {
-              questionId: 3,
-              title: 'ответ 1',
-              personalityId:1,
-              createdAt: new Date(),
-              updatedAt: new Date(),
-              },
-              {
-                questionId: 3,
-                title: 'ответ 2',
-                personalityId:2,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-              },
-              {
-                questionId: 3,
-                title: 'ответ 3',
-                personalityId:3,
-                createdAt: new Date(),
-                updatedAt: new Date(),
-                },
-                {
-                  questionId: 3,
-                  title: 'ответ 4',
-                  personalityId:4,
-                  createdAt: new Date(),
-                  updatedAt: new Date(),
-                },{
-                  questionId: 4,
-                  title: 'ответ 1',
-                  personalityId:1,
-                  createdAt: new Date(),
-                  updatedAt: new Date(),
-                  },
-                  {
-                    questionId: 4,
-                    title: 'ответ 2',
-                    personalityId:2,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                  },
-                  {
-                    questionId: 4,
-                    title: 'ответ 3',
-                    personalityId:3,
-                    createdAt: new Date(),
-                    updatedAt: new Date(),
-                    },
-                    {
-                      questionId: 4,
-                      title: 'ответ 4',
-                      personalityId:4,
-                      createdAt: new Date(),
-                      updatedAt: new Date(),
-                    },
-                    {
-                      questionId: 5,
-                      title: 'ответ 1',
-                      personalityId:1,
-                      createdAt: new Date(),
-                      updatedAt: new Date(),
-                      },
-                      {
-                        questionId: 5,
-                        title: 'ответ 2',
-                        personalityId:2,
-                        createdAt: new Date(),
-                        updatedAt: new Date(),
-                      },
-                      {
-                        questionId: 5,
-                        title: 'ответ 3',
-                        personalityId:3,
-                        createdAt: new Date(),
-                        updatedAt: new Date(),
-                        },
-                        {
-                          questionId: 5,
-                          title: 'ответ 4',
-                          personalityId:4,
-                          createdAt: new Date(),
-                          updatedAt: new Date(),
-                        }
-      ], {});
-
+      });
+    }
+    for (let i = 1; i < 6; i++) {
+      arr1.push({
+        questionId: i,
+        title: 'uncertain',
+        personalityId: i,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+    }
+    for (let i = 1; i < 6; i++) {
+      arr1.push({
+        questionId: i,
+        title: 'no',
+        personalityId: i,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+    }
+    for (let i = 1; i < 6; i++) {
+      arr1.push({
+        questionId: i,
+        title: 'NO',
+        personalityId: i,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+    }
+    await queryInterface.bulkInsert('answers', arr1, {});
   },
 
   down: async (queryInterface, Sequelize) => {
@@ -161,5 +67,5 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };

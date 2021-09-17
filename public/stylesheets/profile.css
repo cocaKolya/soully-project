@@ -1,45 +1,61 @@
-.skills{
+body {
+  background-image: url(/images/11.\ Fundraising\ Ask.png);
+}
+.stat-container {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.horo {
+  padding: 0 20px;
+  width: 1000px;
+  font-size: 20px;
+}
+
+.skills {
   width: 100%;
   max-width: 600px;
   padding: 0 20px;
 }
 
-.skill-name{
+.skill-name {
   font-size: 18px;
-  font-weight: 700;
-  color: #111010;
-  text-transform: uppercase;
-  margin: 20px 0;
+  color: #ffffff;
+  margin: 10px 0;
 }
 
-.skill-bar{
+.skill-bar {
   height: 14px;
-  background: #282828;
+  background: #ffffff42;
   border-radius: 3px;
 }
 
-.skill-per{
+.skill-per {
   height: 14px;
-  background: #19ca95;
+  background: #ffffff;
   border-radius: 3px;
   position: relative;
   animation: fillBars 2.5s 1;
 }
 
-.skill-per::before{
+.skill-per::before {
+  display: none;
   content: attr(per);
   position: absolute;
   padding: 4px 6px;
   background: #f1f1f1;
   border-radius: 4px;
   font-size: 12px;
-  top: -35px;
-  right: 0;
+  top: -6px;
+  right: -35px;
   transform: translateX(50%);
 }
 
-.skill-per::after{
-  content: "";
+.skill-per::after {
+  display: none;
+  content: '';
   position: absolute;
   width: 10px;
   height: 10px;
@@ -50,11 +66,16 @@
   border-radius: 2px;
 }
 
-@keyframes fillBars{
-  from{
+.grafic {
+  width: 350px;
+  color: #ffffff;
+}
+
+@keyframes fillBars {
+  from {
     width: 0;
   }
-  to{
+  to {
     width: 100%;
   }
 }

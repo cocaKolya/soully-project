@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const authUser = require('../middlewares/authUser');
 const { User } = require('../db/models');
 
+
 router.get('/login', authUser, async (req, res) => {
   res.render('login');
 });

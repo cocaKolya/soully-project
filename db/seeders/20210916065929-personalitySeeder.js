@@ -12,25 +12,30 @@ module.exports = {
      * }], {});
     */
     await queryInterface.bulkInsert('personalities', [{
-      personalityName: "cool",
+      personalityName: "Openness",
       createdAt: new Date(),
       updatedAt: new Date(),
       },
       {
-        personalityName: "loh",
+        personalityName: "Conscientiousness",
         createdAt: new Date(),
         updatedAt: new Date(),
         },
         {
-          personalityName: "pidr",
+          personalityName: "Extraversion",
           createdAt: new Date(),
           updatedAt: new Date(),
           },
           {
-            personalityName: "musor",
+            personalityName: "Agreeableness",
             createdAt: new Date(),
             updatedAt: new Date(),
-            }], {});
+            },
+            {
+              personalityName: "Neuroticism",
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              }], {});
   },
 
   down: async (queryInterface, Sequelize) => {

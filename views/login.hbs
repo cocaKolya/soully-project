@@ -1,53 +1,43 @@
-{{!-- <div class='row'>
-  <div class='s4 offset-s4'>
+
+<link rel='stylesheet' href='/stylesheets/login.css' />
+
+<div class='quiz-wrapper'>
+  <h1 class='head-h'>log in to soully</h1>
+  <div id='birth-wrapper' class='hidden row'>
     <form action='/user/login' method='POST'>
-      <div class='row'>
-        <div class='input-field col s4'>
-          <input
-            id='email'
-            type='email'
-            class='validate c-dk-green'
-            name='email'
-          />
-          <label for='email'>Email</label>
-        </div>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='input-data form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='email'
+          name='email'
+          class='form-control'
+          id='floatingInput'
+          placeholder='name@example.com'
+        />
+        <label for='floatingInput'>email address</label>
       </div>
-      <div class='row'>
-        <div class='input-field col s4'>
-          <input
-            id='password'
-            type='password'
-            class='validate'
-            name='password'
-          />
-          <label for='password'>Password</label>
-        </div>
-        <button class='btn button' type='submit'>Submit</button>
+      <div
+        cstyle='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='password'
+          name='password'
+          class='form-control'
+          id='floatingPassword'
+          placeholder='Password'
+        />
+        <label for='floatingPassword'>password</label>
       </div>
+      <button
+        style='width:40%'
+        type='submit'
+        class='btn btn-outline-light'
+      >enter</button>
     </form>
   </div>
-</div> --}}
-
-<form action='/user/login' method="POST">
-        <h1>Login</h1>
-
-        <div class="txtb">
-          <input id='email'
-            type='email'
-            class='validate c-dk-green'
-            name='email'>
-          <span data-placeholder="Email"></span>
-        </div>
-
-        <div class="txtb">
-          <input id='password'
-            type='password'
-            class='validate'
-            name='password'>
-          <span data-placeholder="Password"></span>
-        </div>
-
-        <input type="submit" class="logbtn btn button" value="Login">
-
-
-      </form>
+</div>

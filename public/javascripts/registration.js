@@ -20,5 +20,7 @@ $regBtn.addEventListener('click', async (event) => {
   if (response.ok) {
     console.log('vse kaef');
     window.location = '/home';
+  } else {
+    console.log('oshibochka');
   }
 });
