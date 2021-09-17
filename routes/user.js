@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const authUser = require('../middlewares/authUser');
+const {user} = require("../db/models")
 
 router.get('/login', authUser, async (req, res) => {
   res.render('./login');
@@ -46,7 +47,7 @@ router.post('/login', async (req, res) => {
           id: currentUser.id,
           name: currentUser.name,
         };
-        return res.redirect('/home');
+        // return res.redirect('/home');
       } else {
         return res.redirect('/user/login');
       }
