@@ -3,6 +3,7 @@ const router = express.Router();
 const { questions, answers, lifeQuestions } = require('../db/models');
 
 router.get('/', function (req, res) {
+  if (req.session.user) res.redirect('/home');
   res.render('index');
 });
 
