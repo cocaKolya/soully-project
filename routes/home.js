@@ -9,10 +9,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  console.log('in home post');
   try {
     let { quizAnswers, questionsAnswers, birthData } = req.body;
-    console.log(questionsAnswers);
     for (const key in questionsAnswers) {
       await userAnswers.create({
         userId: req.session.user.id,
@@ -40,19 +38,13 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/horoscope', async (req, res) => {
-  // const UserName =
-  //   req.session.user.name.charAt(0).toUpperCase() +
-  //   req.session.user.name.slice(1);
-  // console.log(UserName);
   const user = await BirthData.findOne({
     where: { name: req.session.user.name },
   });
-  console.log(user);
   const zodiacStyle = {
     day: `${user.date.slice(5, 7)}`,
     month: `${user.date.slice(8)}`,
   };
-  console.log('----------------------------', zodiacStyle);
   const zodiacResult = zodiac.getSignByDate(zodiacStyle);
   let fetchDate = zodiacResult.name.toLowerCase();
 
@@ -67,10 +59,7 @@ router.get('/horoscope', async (req, res) => {
     }
   );
   const responseResult = await response.json();
-  console.log(responseResult);
-  console.log(fetchDate);
   responseResult.zodiacStyle = fetchDate;
-  console.log(responseResult);
   res.json(responseResult);
 });
 

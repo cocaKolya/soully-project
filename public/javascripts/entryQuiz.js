@@ -2,9 +2,8 @@ const $birthData = document.forms.birthData;
 const $birthButton = document.querySelector('.birthdata-btn');
 const $quizWrapper = document.querySelector('.quiz-wrapper');
 const $birthWrapper = document.querySelector('#birth-wrapper');
-// console.log(req.session.user);
-// if (res.locals.user) window.location = '/home';
 
+// узнает общее кол-во вопросов на выбор и по шкале 1-10
 async function getAmoutOf() {
   const responseCount = await fetch(`/max`, {
     method: 'get',
@@ -13,10 +12,9 @@ async function getAmoutOf() {
     },
   });
   const quizCount = await responseCount.json();
-  console.log(quizCount);
   return quizCount;
 }
-
+// разметка для вопросов на выбор
 function showQuestions(data) {
   let arrOfAnswers = data.answers;
   result = '';
@@ -49,7 +47,7 @@ function showQuestions(data) {
   </form>
 </div>`;
 }
-
+// разметка для вопросов по шкале 1-10
 function showQuiz(data) {
   return `<div style='width: 700px;' class='container flex-row'>
   <form
@@ -93,10 +91,7 @@ function showQuiz(data) {
   </form>
 </div>`;
 }
-//
-//
-//
-
+// достает из бд нужный вопрос
 async function showFirstQuestion(count) {
   const response = await fetch(`/question/${count}`, {
     method: 'get',
@@ -110,9 +105,7 @@ async function showFirstQuestion(count) {
     return dataFromBack.id;
   }
 }
-//
-//
-////////////////-------------------------.>>>>>>>>>>>>>
+// достает из бд нужный вопрос по шкале 1-10
 async function showFirstQuiz(count) {
   const response = await fetch(`/quiz/${count}`, {
     method: 'get',
@@ -128,13 +121,12 @@ async function showFirstQuiz(count) {
 }
 
 let quizAnswers = {};
-
+// рисует все вопросы по шкале 1-10 по очереди и записывает ответы, в конце объект ответов отправляет в localStorage
 async function quizStep(count) {
   const { quizCount } = await getAmoutOf();
   if (count > quizCount - 1) {
     const jsonQA = JSON.stringify(quizAnswers);
     localStorage.setItem('quizAnswers', jsonQA);
-    console.log('3local storage---->', localStorage.getItem('quizAnswers'));
     return (window.location = '/user/registration');
   }
   showFirstQuiz(count).then((id) => {
@@ -142,28 +134,19 @@ async function quizStep(count) {
     $quizButton.addEventListener('click', (event) => {
       event.preventDefault();
       const range = document.querySelector('#range-input');
-      console.log('--->>>', range.value);
       quizAnswers[id] = range.value;
       quizStep(count + 1);
     });
   });
 }
-//
-//
-//
-//
 
 let questionsAnswers = {};
-
+// рисует все вопросы по очереди и записывает ответы, в конце объект ответов отправляет в localStorage
 async function questionsStep(count) {
   const { questionCount } = await getAmoutOf();
   if (count > questionCount - 1) {
     const jsonQA = JSON.stringify(questionsAnswers);
     localStorage.setItem('questionsAnswers', jsonQA);
-    console.log(
-      '2local storage---->',
-      localStorage.getItem('questionsAnswers')
-    );
     return quizStep(0);
   }
   showFirstQuestion(count).then((questionId) => {
@@ -174,7 +157,6 @@ async function questionsStep(count) {
       const answerId = Object.fromEntries(
         new FormData($questionForm)
       ).flexRadioDefault;
-      console.log(answerId);
       questionsAnswers[questionId] = answerId;
       if (answerId) {
         questionsStep(count + 1);
@@ -190,35 +172,24 @@ async function questionsStep(count) {
     });
   });
 }
-//////////////////////<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-//
-//
-//
 // localStorage.clear();
-console.log('local storage---->', localStorage.getItem('birthData'));
-console.log('local storage---->', localStorage.getItem('questionsAnswers'));
-console.log('local storage---->', localStorage.getItem('quizAnswers'));
 //проверка наличия в сторадже данных из первого опросника про рождение
 if (!localStorage.getItem('birthData')) {
   $birthWrapper.classList.remove('hidden');
   // $quizWrapper.innerHTML = showBirthData();
   $birthButton.addEventListener('click', async (event) => {
-    console.log('knopka');
     event.preventDefault();
     const myData = Object.fromEntries(new FormData($birthData));
     let { name, date, time, place } = myData;
     if ((name, date, time, place)) {
       const jsonData = JSON.stringify(myData);
       localStorage.setItem('birthData', jsonData);
-      console.log(
-        'inside local storage---->',
-        localStorage.getItem('birthData')
-      );
       questionsStep(0);
     }
   });
 }
+// проверка наличия ответов на вопросы в сторадже
 if (
   !localStorage.getItem('questionsAnswers') &&
   localStorage.getItem('birthData')

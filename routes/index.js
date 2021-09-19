@@ -24,7 +24,6 @@ router.get('/question/:count', async function (req, res) {
 
 router.get('/max', async function (req, res) {
   let quizCount = await lifeQuestions.count();
-  console.log(quizCount);
   let questionCount = await questions.count();
   res.json({ quizCount, questionCount });
 });

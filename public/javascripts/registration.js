@@ -18,9 +18,8 @@ $regBtn.addEventListener('click', async (event) => {
     body: JSON.stringify(myData),
   });
   if (response.ok) {
-    console.log('vse kaef');
     window.location = '/home';
   } else {
-    console.log('oshibochka');
+    console.log(error);
   }
 });

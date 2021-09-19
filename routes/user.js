@@ -14,7 +14,6 @@ router.get('/registration', authUser, async (req, res) => {
 
 router.post('/registration', async (req, res) => {
   const { name, email, password } = req.body;
-  console.log(name, email, password);
   if (name && email && password) {
     const hashPass = await bcrypt.hash(password, 10);
     try {
@@ -30,11 +29,9 @@ router.post('/registration', async (req, res) => {
 
       return res.redirect('/home');
     } catch (err) {
-      console.log('333333333');
       return res.redirect('/user/registration');
     }
   } else {
-    console.log('4444444444444');
     return res.redirect('/user/registration');
   }
 });

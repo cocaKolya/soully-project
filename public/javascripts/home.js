@@ -23,13 +23,9 @@ async function localStorageToDb() {
     },
     body: JSON.stringify({ questionsAnswers, quizAnswers, birthData }),
   });
-  console.log(responseCount);
   return responseCount;
 }
 
-console.log(questionsAnswers);
-console.log(quizAnswers);
-console.log(birthData);
 async function check() {
   if ((questionsAnswers, quizAnswers, birthData)) {
     await localStorageToDb();
@@ -94,6 +90,6 @@ async function showHoro() {
 
     $horoWrapper.insertAdjacentHTML('afterend', showHoroscope(dataFromBack));
   } else {
-    console.log('pizda baze tvoey');
+console.log(error);
   }
 }
