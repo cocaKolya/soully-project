@@ -1,0 +1,43 @@
+
+<link rel='stylesheet' href='/stylesheets/login.css' />
+
+<div class='quiz-wrapper'>
+  <h1 class='head-h'>log in to soully</h1>
+  <div id='birth-wrapper' class='hidden row'>
+    <form action='/user/login' method='POST'>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='input-data form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='email'
+          name='email'
+          class='form-control'
+          id='floatingInput'
+          placeholder='name@example.com'
+        />
+        <label for='floatingInput'>email address</label>
+      </div>
+      <div
+        cstyle='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='password'
+          name='password'
+          class='form-control'
+          id='floatingPassword'
+          placeholder='Password'
+        />
+        <label for='floatingPassword'>password</label>
+      </div>
+      <button
+        style='width:40%'
+        type='submit'
+        class='btn btn-outline-light'
+      >enter</button>
+    </form>
+  </div>
+</div>

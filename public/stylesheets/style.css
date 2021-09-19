@@ -1,8 +1,111 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  box-sizing: border-box;
+  color: white;
 }
 
-a {
-  color: #00B7FF;
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+.head-h {
+  margin-bottom: 20px;
+}
+.border-bott {
+  border-bottom: 1px solid white;
+}
+
+#select {
+  display: inherit;
+}
+
+.hidden {
+  display: none;
+}
+.container {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem !important;
+}
+
+.head-logo {
+  font-size: 40pt;
+}
+
+.user-nav {
+  font-size: ;
+}
+
+.log-nav {
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.212);
+}
+
+.log-nav:hover {
+  background-color: rgba(255, 255, 255, 0.609);
+}
+
+.quiz-wrapper {
+  width: 100%;
+  padding: 0px 12%;
+  margin-top: 14%;
+  text-align: -webkit-center;
+}
+
+.form-control {
+  background-color: #ffffff2b !important;
+}
+
+#err-message {
+  padding-top: 10px;
+  color: rgb(245, 135, 135);
+}
+
+.birthdata-btn {
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-check-label {
+  font-size: 16pt;
+}
+.form-check {
+  padding-left: 0px;
+}
+
+.radio-pad {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.inside-div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-around;
+}
+.range-button {
+  width: 70px;
+}
+
+.next-button {
+  width: 150px;
+}
+
+.row-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-around;
 }

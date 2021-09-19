@@ -1,0 +1,17 @@
+<div class='row'>
+  <form class='col s12' action='/params-question' name='params' method='POST'>
+    {{#each}}
+      <div class='row'>
+        <h2>{{this.question}}</h2>
+        <p class='range-field'>
+          <input type='range' id='test5' min='0' max='100' />
+        </p>
+      </div>
+    {{/each}}
+    <button
+      id='button-question'
+      class='waves-effect waves-light btn-large'
+    >NEXT</button>
+
+  </form>
+</div>

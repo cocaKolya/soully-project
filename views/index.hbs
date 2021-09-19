@@ -1,2 +1,70 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<script defer src='/javascripts/entryQuiz.js'></script>
+<link rel='stylesheet' href='/stylesheets/index.css' />
+<div class='quiz-wrapper'>
+  <h1 class='head-h'>enter your birth info</h1>
+  <div id='birth-wrapper' class='hidden row'>
+    <form class='col container' name='birthData'>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='input-data form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          placeholder='name'
+          name='name'
+          id='floatingName'
+          type='text'
+          class='form-control'
+        />
+        <label for='floatingInput'>name</label>
+      </div>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='date'
+          name='date'
+          class='form-control'
+          id='floatingInput'
+          placeholder='Password'
+        />
+        <label for='floatingInput'>birth date</label>
+      </div>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='time'
+          name='time'
+          class='form-control'
+          id='floatingInput'
+          placeholder='Password'
+        />
+        <label for='floatingInput'>time of birth</label>
+      </div>
+      <div
+        style='margin-bottom: 1.5rem!important'
+        class='form-floating mb-3 col'
+      >
+        <input
+          style='color:white'
+          type='text'
+          name='place'
+          class='form-control'
+          id='floatingInput'
+          placeholder='Password'
+        />
+        <label for='floatingInput'>place of birth</label>
+      </div>
+      <button
+        style='width:40%'
+        type='button'
+        class='birthdata-btn btn btn-outline-light'
+      >Start</button>
+    </form>
+  </div>
+</div>
