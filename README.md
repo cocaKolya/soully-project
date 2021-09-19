@@ -1,6 +1,6 @@
 
 # Soully Project
-![soully](https://raw.githubusercontent.com/cocaKolya/soully-project/main/public/images/screenshots/Screenshot%20from%202021-09-19%2015-18-20.png?token=AQFXXR4PVC2HTIPQNXL2DXDBI4W5Y)
+![soully](https://github.com/cocaKolya/soully-project/blob/main/public/images/screenshots/Screenshot%20from%202021-09-19%2015-18-20.png)
 
 This is a web application about mental health. It helps to know your personality, become better version of yourself and succeed in life. It has all-in-one personality tests, action plan with implementation steps and all the stats.
 
